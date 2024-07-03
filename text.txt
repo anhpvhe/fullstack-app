@@ -2,7 +2,7 @@ terraform init -migrate-state
 terraform init -reconfigure
 terraform apply -auto-approve  
 terraform destroy -auto-approve  
-ssh -i ../key/key.pem ec2-user@54.242.240.78
+ssh -i ../key/key.pem ec2-user@44.202.16.113
 
 $acl = Get-Acl "D:\StudySpace\Terraform\Tutorial\project-23\key\key.pem"
 $acl.SetAccessRuleProtection($true, $false)
