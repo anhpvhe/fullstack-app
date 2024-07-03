@@ -1,0 +1,22 @@
+# Node dependencies
+node_modules/
+build/
+
+# Environment variables
+.env
+
+# Logs
+npm-debug.log
+yarn-debug.log
+yarn-error.log
+
+# Terraform
+*.tfstate
+*.tfstate.*
+.terraform/
+terraform.tfvars
+.terraform.lock.hcl
+
+# AWS
+key/key.pem
+key/key.pub

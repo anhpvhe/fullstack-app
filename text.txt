@@ -1,0 +1,32 @@
+terraform init -migrate-state  
+terraform init -reconfigure
+terraform apply -auto-approve  
+terraform destroy -auto-approve  
+ssh -i ../key/key.pem ec2-user@54.242.240.78
+
+$acl = Get-Acl "D:\StudySpace\Terraform\Tutorial\project-23\key\key.pem"
+$acl.SetAccessRuleProtection($true, $false)
+$rule = New-Object System.Security.AccessControl.FileSystemAccessRule("$(whoami)", "FullControl", "Allow")
+$acl.SetAccessRule($rule)
+Set-Acl "D:\StudySpace\Terraform\Tutorial\project-23\key\key.pem" $acl
+
+ sudo yum update -y
+      sudo yum install docker -y
+      sudo systemctl start docker
+      sudo systemctl enable docker
+
+docker login --username AWS --password-stdin 975050200537.dkr.ecr.us-east-1.amazonaws.com && \
+docker pull 975050200537.dkr.ecr.us-east-1.amazonaws.com/react-frontend:latest && \
+docker stop frontend || true && \
+docker rm frontend || true && \
+docker run -d --name frontend -p 80:80 975050200537.dkr.ecr.us-east-1.amazonaws.com/react-frontend:latest
+
+ssh -i C:\ProgramData\Jenkins\.jenkins\workspace\fullstack-ecr/key/key.pem ec2-user@54.167.221.83
+
+ssh -o StrictHostKeyChecking=no -i C:\ProgramData\Jenkins\.jenkins\workspace\fullstack-ecr/key/key.pem ec2-user@54.167.221.83
+jenkins pipeline terraform statefile
+
+note that when run we must initialize s3 and dynamodb first
+
+when delete project, remove images from ecr, then destroy terraform, then remove s3 item, then terraform destroy s3
+terraform init -reconfigure
